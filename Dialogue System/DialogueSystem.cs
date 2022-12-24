@@ -5,7 +5,6 @@ using TMPro;
 
 public class DialogueSystem : MonoBehaviour, ITalk
 {
-    //Первая реплика, нынешняя реплика и статус диалога
     [SerializeField] DialogueState firstState;
     public DialogueState currentState;
     public bool ActiveDialogue;
@@ -23,7 +22,7 @@ public class DialogueSystem : MonoBehaviour, ITalk
 
     private void StartInv(ITalk state)
     {
-        if (state.stateID== "Tutorial_1_13") //временно, тороплюсь
+        if (state.stateID== "Tutorial_1_13") 
         {
             for(int i = 0; i<startItem.Length; i++)
             {
@@ -41,7 +40,6 @@ public class DialogueSystem : MonoBehaviour, ITalk
         TalkEvent.OnStateChanged+= StartInv;
     }
 
-    //обновление текста на сцене
     private void UpdateText()
     {
         textBox.text = currentState.Text;
@@ -63,7 +61,7 @@ public class DialogueSystem : MonoBehaviour, ITalk
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (currentState.NextState!=null) //проверка на финальную реплику
+                if (currentState.NextState!=null) 
                 {
                     currentState=currentState.NextState;
                     UpdateText();
