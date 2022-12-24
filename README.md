@@ -12,5 +12,5 @@ Files containing examples of:
     - SpriteLoader.cs
 5. Serialization
     - Save System
-    -- json serialization/SpriteLoader.cs (json)
-    -- Binary Formatter/SaveLoadExample.cs (binary formatter)
+    - - json serialization/SpriteLoader.cs (json)
+    - - Binary Formatter/SaveLoadExample.cs (binary formatter)
