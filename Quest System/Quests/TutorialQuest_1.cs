@@ -8,8 +8,8 @@ public class TutorialQuest_1 : Quest, IQuest
     public string description;
     [SerializeField] InventoryItemData itemReward;
     public int rewardAmount = 1;
-    public int[] itemID; //айди того что нужно проверять
-    public string[] itemIDs; //если проверять диалоговую реплику
+    public int[] itemID; 
+    public string[] itemIDs; 
     public int goalsNumber;
     public string[] goalsDescription;
     public int[] itemsNumber;
@@ -43,13 +43,11 @@ public class TutorialQuest_1 : Quest, IQuest
                     Goals.Add(new TalkGoal(this, itemIDs[i], goalsDescription[i], false, 0, itemsNumber[i]));
                     break;
                 default:
-                    Debug.Log("Неверный тип квеста");
                     break;
             }
         }
 
         Goals.ForEach(g => g.Init());
-        print("Quest setted "+questName);
         FindObjectOfType<QuestsUIManager>().SetCurrentActiveQuest(questName, Description, goalsNumber, Goals, this);
     }
 }
